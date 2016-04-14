@@ -1,0 +1,108 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="top|center"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:weightSum="1"
+    android:id="@+id/LinearLayout_5">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/RelativeLayout_3"
+        android:layout_gravity="fill_horizontal">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/EditText_search"
+            android:layout_gravity="start"
+            android:layout_toStartOf="@+id/imageButton_searchMap"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            style="@style/Base.TextAppearance.AppCompat"
+            android:padding="5dp"
+            android:gravity="start|center_vertical"
+            android:inputType="textAutoCorrect"
+            android:layout_toLeftOf="@+id/imageButton_searchMap"
+            android:layout_alignBottom="@+id/imageButton_searchMap" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton_searchMap"
+            android:onClick="onSearch"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/imageButton_changeMap"
+            android:layout_toStartOf="@+id/imageButton_changeMap"
+            android:src="@android:drawable/ic_menu_search"
+            android:backgroundTint="#c2d6ff" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_view"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@id/imageButton_changeMap"
+            android:id="@+id/imageButton_changeMap"
+            android:onClick="changeMapType"
+            android:backgroundTint="#c2d6ff" />
+            />
+
+    </RelativeLayout>
+
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:id="@+id/map"
+            tools:context="com.wordpress.yujiaguo.parkingcamera4yp2.MapsActivity"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_weight="1.0" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RelativeLayout_2"
+        android:orientation="horizontal"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp">
+
+        <Button
+            android:layout_width="185dp"
+            android:layout_height="30dp"
+            android:id="@+id/button_map_return"
+            android:text="@string/Return_home_text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
+            android:onClick="onReturnHome"
+            android:textSize="12sp"
+            android:background="#c2d6ff"
+            android:layout_alignParentTop="true"
+            android:gravity="center" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:id="@+id/button_map_camera"
+            android:text="@string/Camera_Button"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="launchCamera"
+            android:textSize="12sp"
+            android:background="#c2d6ff"
+            android:layout_toEndOf="@+id/button_map_return"
+            android:layout_toRightOf="@+id/button_map_return"
+            android:drawableLeft="@android:drawable/ic_menu_camera"/>
+
+    </RelativeLayout>
+</LinearLayout>
+

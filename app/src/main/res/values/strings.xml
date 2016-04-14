@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ParkingCamera4YP2</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="App_Header">Wireless Parking Camera</string>
+    <string name="Camera_Button">View Parking Camera</string>
+    <string name="Map_Button">View Map</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="Return_home_text">Return to home</string>
+    <string name="String_find_location">Find Location</string>
+    <string name="Search_Places">search for places...</string>
+    <string name="My_GPS_Location">My current GPS location:</string>
+    <string name="Camera_ip_addr">192.168.43.35:10</string>
+    <string name="Camera_ip_is">My parking camera IP address:</string>
+    <string name="Change_Tethering_Status">Turn on/off WiFi Tethering</string>
+    <string name="Wifi_hotspot_is">Wi-Fi Hotspot is:</string>
+</resources>

@@ -1,0 +1,181 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="top|center"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:weightSum="1"
+    android:id="@+id/LinearLayout_1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:padding="0dp"
+        android:layout_gravity="top|center"
+        android:id="@+id/RelativeLayout_1"
+        android:layout_weight="0.05"
+        android:background="#c2d6ff">
+
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textClock"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RelativeLayout_4"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/My_GPS_Location"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/textView_myLocationIs"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_alignBottom="@id/textView_myLocationIs"
+            android:layout_alignTop="@id/textView_myLocationIs"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_LocationContent"
+            android:layout_toRightOf="@+id/textView_myLocationIs"
+            android:layout_toEndOf="@id/textView_myLocationIs"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textSize="12sp"
+            android:gravity="start|center_vertical"
+            android:paddingLeft="5dp"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RelativeLayout_5"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Camera_ip_is"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/textView_CameraIpAddress"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_alignBottom="@id/textView_CameraIpAddress"
+            android:layout_alignTop="@id/textView_CameraIpAddress"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_CameraIpContent"
+            android:layout_toRightOf="@+id/textView_CameraIpAddress"
+            android:layout_toEndOf="@id/textView_CameraIpAddress"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textSize="12sp"
+            android:gravity="start|center_vertical"
+            android:text="@string/Camera_ip_addr"
+            android:paddingLeft="5dp"
+            android:paddingStart="5dp"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RelativeLayout_6"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Wifi_hotspot_is"
+            android:id="@+id/textView_HotspotStatus"
+            android:textSize="15sp"
+            android:gravity="start|center_vertical"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_alignBottom="@id/textView_HotspotStatus"
+            android:layout_alignTop="@id/textView_HotspotStatus"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_textView_HotspotStatusContent"
+            android:layout_toRightOf="@+id/textView_HotspotStatus"
+            android:layout_toEndOf="@id/textView_HotspotStatus"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textSize="12sp"
+            android:gravity="start|center_vertical"
+            android:paddingLeft="5dp"/>
+
+
+
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:id="@+id/LinearLayout_3">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Camera_Button"
+            android:id="@+id/button_camera"
+            android:layout_gravity="center_horizontal"
+            android:onClick="launchCamera"
+            />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:id="@+id/LinearLayout_4">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Map_Button"
+            android:id="@+id/button_map"
+            android:layout_gravity="center_horizontal"
+            android:onClick="onStartMap"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Change_Tethering_Status"
+        android:id="@+id/button_tetheringTest"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.05"
+        android:onClick="onSetWifiHotspot"/>
+
+</LinearLayout>
