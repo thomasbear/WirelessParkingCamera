@@ -8,25 +8,106 @@
     android:weightSum="1"
     android:id="@+id/LinearLayout_1">
 
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:padding="0dp"
-        android:layout_gravity="top|center"
         android:id="@+id/RelativeLayout_1"
-        android:layout_weight="0.05"
-        android:background="#c2d6ff">
-
-        <TextClock
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textClock"
-            android:layout_gravity="center_horizontal"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+        android:layout_weight="0.03"
+        android:background="#4d31aa">
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:id="@+id/RelativeLayout_8">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/LinearLayout_marker1"
+            android:layout_toStartOf="@+id/LinearLayout_marker1"
+            android:gravity="center"
+            android:id="@+id/buttonHolder1">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/wifi_tethering"
+                android:onClick="onSetWifiHotspot"
+                android:background="#fafafa"
+                android:contentDescription="@string/Turn_on_off_hotspot"
+                android:id="@+id/imageButton_changeHotspot"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="1.5dp"
+            android:layout_height="10dp"
+            android:layout_alignTop="@+id/buttonHolder1"
+            android:layout_alignBottom="@+id/buttonHolder1"
+            android:layout_centerInParent="true"
+            android:id="@+id/LinearLayout_marker1"
+            android:background="#73a4f7">
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/LinearLayout_marker1"
+            android:layout_toEndOf="@+id/LinearLayout_marker1"
+            android:id="@+id/buttonHolder_2">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/gps_marker"
+                android:onClick="onGPS"
+                android:background="#fafafa"
+                android:contentDescription="@string/Update_GPS"
+                android:id="@+id/imageButton_getGPS"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:padding="0dp"
+        android:id="@+id/RelativeLayout_7"
+        android:layout_weight="0.03"
+        android:background="#5e86cb">
+
+    </RelativeLayout>
+
+
+
 
     <RelativeLayout
         android:orientation="vertical"
@@ -91,7 +172,8 @@
             android:gravity="start|center_vertical"
             android:text="@string/Camera_ip_addr"
             android:paddingLeft="5dp"
-            android:paddingStart="5dp"/>
+            android:paddingRight="0dp"
+            android:paddingEnd="0dp"/>
 
 
     </RelativeLayout>
@@ -125,57 +207,105 @@
             android:layout_alignParentEnd="true"
             android:textSize="12sp"
             android:gravity="start|center_vertical"
-            android:paddingLeft="5dp"/>
-
-
-
-
+            android:paddingLeft="5dp" />
 
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:orientation="vertical"
+
+
+
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#5e86cb"
+    android:layout_weight="0.03"
+    android:id="@+id/LinearLayout_2">
+
+</LinearLayout>
+
+
+    <RelativeLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:id="@+id/LinearLayout_3">
-
-        <Button
+        android:layout_margin="10dp"
+        android:id="@+id/RelativeLayout_9">
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Camera_Button"
-            android:id="@+id/button_camera"
-            android:layout_gravity="center_horizontal"
-            android:onClick="launchCamera"
-            />
-    </LinearLayout>
+            android:layout_gravity="center"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/LinearLayout_marker2"
+            android:layout_toStartOf="@+id/LinearLayout_marker2"
+            android:gravity="center"
+            android:id="@+id/buttonHolder3"
+            android:padding="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#baccf8">
 
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/camera_launcher"
+                android:onClick="launchCamera"
+                android:background="#baccf8"
+                android:contentDescription="@string/View_camera"
+                android:id="@+id/imageButton_CameraOn"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
 
+        </RelativeLayout>
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:id="@+id/LinearLayout_4">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Map_Button"
-            android:id="@+id/button_map"
-            android:layout_gravity="center_horizontal"
-            android:onClick="onStartMap"/>
+        android:orientation="horizontal"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:id="@+id/LinearLayout_marker2"
+        android:layout_marginLeft="5dp">
     </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Change_Tethering_Status"
-        android:id="@+id/button_tetheringTest"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.05"
-        android:onClick="onSetWifiHotspot"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/LinearLayout_marker2"
+            android:layout_toEndOf="@+id/LinearLayout_marker2"
+            android:id="@+id/buttonHolder_4"
+            android:padding="5dp"
+            android:background="#baccf8">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/map_launcher"
+                android:onClick="onStartMap"
+                android:background="#baccf8"
+                android:contentDescription="@string/view_map"
+                android:id="@+id/imageButton_MapOn"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
 
 </LinearLayout>

@@ -14,5 +14,9 @@
     <string name="Camera_ip_addr">192.168.43.35:10</string>
     <string name="Camera_ip_is">My parking camera IP address:</string>
     <string name="Change_Tethering_Status">Turn on/off WiFi Tethering</string>
-    <string name="Wifi_hotspot_is">Wi-Fi Hotspot is:</string>
+    <string name="Wifi_hotspot_is">My Wi-Fi Hotspot is:</string>
+    <string name="Turn_on_off_hotspot">Turn On/Off Wi-Fi Hotspot</string>
+    <string name="view_map">View Map</string>
+    <string name="View_camera">View Parking Camera</string>
+    <string name="Update_GPS">Update GPS</string>
 </resources>

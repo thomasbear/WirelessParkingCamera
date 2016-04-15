@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //call method to show gps location on homepage
-        showGPS();
+        onCreateGPS();
 
         //call method to show wifi hotspot status on homepage
         showHotspotStatus();
@@ -78,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(StartMapIntent);
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -101,8 +100,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //method of showing GPS location
-    private void showGPS() {
+    //method of showing GPS location, oncreate
+    private void onCreateGPS() {
         TextView GPSLatLng = (TextView)findViewById(R.id.textView_LocationContent);
 
         //Get LocationManager object from System Service LOCATION_SERVICE
@@ -132,6 +131,42 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //method of showing GPS location, onclick(one toast added)
+    public void onGPS(View view) {
+        TextView GPSLatLng = (TextView)findViewById(R.id.textView_LocationContent);
+
+        //Get LocationManager object from System Service LOCATION_SERVICE
+        LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+
+        //Create a criteria maneger to retrieve provider
+        Criteria criteria = new Criteria();
+
+        //Get the name of the best provider
+        String provider = locationManager.getBestProvider(criteria, true);
+
+        //Get current location
+        Location myLocation = locationManager.getLastKnownLocation(provider);
+
+        //Get latitude & longitude
+        Double myLatitude = myLocation.getLatitude();
+        Double myLongitude = myLocation.getLongitude();
+
+        //show location if available
+        if(myLocation == null) {
+            //tell user
+            Toast.makeText(getApplicationContext(),
+                    "GPS location currently unavailable, check GPS settings",
+                    Toast.LENGTH_LONG).show();
+        }
+        else{
+            //updating GPS location
+            GPSLatLng.setText(""+ myLatitude+", "+myLongitude);
+            //tell user
+            Toast.makeText(getApplicationContext(), "Your GPS location is up to date",
+                    Toast.LENGTH_LONG).show();
+        }
+    }
+
     //turn on and off wifi hotspot, access wifi hotspot status
     public void onSetWifiHotspot(View view){
         //this variable detectes the initial state of hotspot
@@ -153,14 +188,14 @@ public class MainActivity extends AppCompatActivity {
             //let user know
             Toast.makeText(getApplicationContext(),
                     "Wi-Fi hotspot has just been turned on",
-                    Toast.LENGTH_SHORT).show();
+                    Toast.LENGTH_LONG).show();
         }else{
             //update textview
             textviewWifi.setText(" off");
             //let user know
             Toast.makeText(getApplicationContext(),
                     "Wi-Fi hotspot has just been turned off",
-                    Toast.LENGTH_SHORT).show();
+                    Toast.LENGTH_LONG).show();
         }
     }
 
@@ -178,43 +213,5 @@ public class MainActivity extends AppCompatActivity {
             textviewWifi.setText(" off");
         }
     }
-
-
-
-
-
-
-
-    /*onClick method to show GPS location for button
-    public void onClickGPS(View view){
-        TextView GPSLatLng = (TextView)findViewById(R.id.textView_LocationContent);
-
-        //Get LocationManager object from System Service LOCATION_SERVICE
-        LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-
-        //Create a criteria maneger to retrieve provider
-        Criteria criteria = new Criteria();
-
-        //Get the name of the best provider
-        String provider = locationManager.getBestProvider(criteria, true);
-
-        //Get current location
-        Location myLocation = locationManager.getLastKnownLocation(provider);
-
-        //Get latitude & longitude
-        Double myLatitude = myLocation.getLatitude();
-        Double myLongitude = myLocation.getLongitude();
-
-        //show location if available
-        if(myLocation == null) {
-            Toast.makeText(getApplicationContext(),
-                    "GPS location currently unavailable, check GPS settings",
-                    Toast.LENGTH_LONG).show();
-        }
-        else{
-        GPSLatLng.setText(""+ myLatitude+", "+myLongitude);
-        }
-    }*/
-
 
 }
